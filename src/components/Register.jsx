@@ -10,7 +10,7 @@ function Register() {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const res = await axios.post('botback-q73g.vercel.app/api/auth/register', form);
+      const res = await axios.post('https://botback-q73g.vercel.app/api/auth/register', form);
       setMessage(res.data.message);
       navigate('/login'); // redirigir al componente de login después de registrarse
     } catch (err) {

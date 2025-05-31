@@ -9,7 +9,7 @@ function Chat() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await axios.get('botback-q73g.vercel.app/api/chat/history', {
+        const res = await axios.get('https://botback-q73g.vercel.app/api/chat/history', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setMessages(res.data);
@@ -24,7 +24,7 @@ function Chat() {
 const handleReset = async () => {
   try {
     const token = localStorage.getItem('token');
-    const res = await fetch('http://localhost:5000/api/chat/reset', {
+    const res = await fetch('https://botback-q73g.vercel.app/api/chat/reset', {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -50,7 +50,7 @@ const handleReset = async () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/chat/send',
+        'https://botback-q73g.vercel.app/api/chat/send',
         { message: input },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -92,7 +92,7 @@ const handleReset = async () => {
   onClick={async () => {
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/chat/export',
+        'https://botback-q73g.vercel.app/api/chat/export',
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
