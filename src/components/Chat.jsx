@@ -9,7 +9,7 @@ function Chat() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/chat/history', {
+        const res = await axios.get('botback-q73g.vercel.app/api/chat/history', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setMessages(res.data);
